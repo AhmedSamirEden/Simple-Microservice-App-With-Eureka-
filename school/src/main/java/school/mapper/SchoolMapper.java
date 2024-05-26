@@ -12,6 +12,4 @@ public interface SchoolMapper {
     SchoolDto SchoolToDto(School school);
 
     School dtoToSchool(SchoolDto schoolDto);
-
-
 }
