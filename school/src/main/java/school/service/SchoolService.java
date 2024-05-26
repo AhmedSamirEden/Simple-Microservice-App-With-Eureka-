@@ -8,7 +8,6 @@ import school.model.dto.SchoolDto;
 import school.model.entity.School;
 import school.repository.SchoolRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -45,7 +44,6 @@ public class SchoolService {
                 .stream().map(school -> SchoolMapper.INSTANCE.SchoolToDto(school))
                 .collect(Collectors.toList());
     }
-
 
     @Transactional
     public void removeSchool(Long id) {
