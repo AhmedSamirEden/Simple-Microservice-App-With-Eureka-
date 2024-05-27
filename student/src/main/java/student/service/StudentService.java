@@ -45,4 +45,8 @@ public class StudentService {
         return optionalStudentDto;
     }
 
+    @Transactional
+    public void deleteStudent(Long id) {
+        studentRepository.deleteById(id);
+    }
 }

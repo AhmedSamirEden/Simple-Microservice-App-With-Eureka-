@@ -46,4 +46,9 @@ public class StudentController {
     public Optional<StudentDto> updateStudent(@Valid @RequestBody StudentDto studentDto, @PathVariable Long id) {
         return studentService.updateStudent(studentDto, id);
     }
+
+    @DeleteMapping("/student/{id}")
+    public void deleteStudent(@PathVariable Long id) {
+        studentService.deleteStudent(id);
+    }
 }
