@@ -3,6 +3,7 @@ package school.service;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+//import school.feign.FeignClientSchool;
 import school.mapper.SchoolMapper;
 import school.model.dto.SchoolDto;
 import school.model.entity.School;
@@ -16,6 +17,9 @@ import java.util.stream.Collectors;
 public class SchoolService {
     @Autowired
     private SchoolRepository schoolRepository;
+
+//    @Autowired
+//    private FeignClientSchool feignClientSchool;
 
     @Transactional
     public SchoolDto addSchool(SchoolDto schoolDto) {
@@ -49,4 +53,10 @@ public class SchoolService {
     public void removeSchool(Long id) {
         schoolRepository.deleteById(id);
     }
+
+//    @Transactional
+//    public List<String> getAllNames() {
+//        return feignClientSchool.getAllNames();
+//    }
+
 }

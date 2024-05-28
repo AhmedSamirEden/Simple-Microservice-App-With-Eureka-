@@ -10,6 +10,7 @@ import student.mapper.StudentMapper;
 import student.model.dto.StudentDto;
 import student.repository.StudentRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -48,5 +49,15 @@ public class StudentService {
     @Transactional
     public void deleteStudent(Long id) {
         studentRepository.deleteById(id);
+    }
+
+    @Transactional
+    public List<String> getAllNames() {
+        List<StudentDto> studentDtos = studentRepository.findAll().stream().map(student -> StudentMapper.INSTANCE.studentToDto(student)).collect(Collectors.toList());
+        List<String> names = new ArrayList<>();
+        for (StudentDto student : studentDtos) {
+            names.add(student.getName());
+        }
+        return names;
     }
 }

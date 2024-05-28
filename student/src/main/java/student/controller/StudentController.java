@@ -1,18 +1,22 @@
 package student.controller;
 
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
+import student.mapper.StudentMapper;
 import student.model.dto.StudentDto;
 import student.service.StudentService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import java.util.HashMap;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 public class StudentController {
@@ -50,5 +54,10 @@ public class StudentController {
     @DeleteMapping("/student/{id}")
     public void deleteStudent(@PathVariable Long id) {
         studentService.deleteStudent(id);
+    }
+
+    @GetMapping("/students/names")
+    public List<String> getAllNames() {
+        return studentService.getAllNames();
     }
 }

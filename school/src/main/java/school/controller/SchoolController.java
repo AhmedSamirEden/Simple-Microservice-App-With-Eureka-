@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
+//import school.feign.FeignClientSchool;
 import school.mapper.SchoolMapper;
 import school.model.dto.SchoolDto;
 import school.model.entity.School;
@@ -55,6 +56,11 @@ public class SchoolController {
         } else {
             return ResponseEntity.ok(schoolService.updateSchool(id, schoolDto));
         }
-
     }
+
+//    @GetMapping("/school/students/names")
+//    public List<String> getAllNames() {
+//        return schoolService.getAllNames();
+//    }
+
 }
