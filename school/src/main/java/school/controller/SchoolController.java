@@ -1,17 +1,17 @@
 package school.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
-import school.feign.FeignClientSchool;
+//import school.feign.FeignClientSchool;
 import school.mapper.SchoolMapper;
 import school.model.dto.SchoolDto;
 import school.model.entity.School;
 import school.service.SchoolService;
 
-import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
